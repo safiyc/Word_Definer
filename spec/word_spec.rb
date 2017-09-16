@@ -18,7 +18,7 @@ describe("#Word") do
   end
 
   describe("#save") do
-    it("saves words and definitons") do
+    it("saves words and definitions") do
       word1 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
       word1.save
       word2 = Word.new({:word=> "Tired", :word_definition=> "The result of spending a whole day figuring out coding errors"})
