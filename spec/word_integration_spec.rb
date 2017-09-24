@@ -3,14 +3,14 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-# describe('the word creation path', {:type=> :feature}) do
-#   it('processes the user entry and displays word') do
-#     visit('/')
-#     fill_in('word', :with=> 'Apple')
-#     click_button('Add Word!')
-#     expect(page).to have_content('Apple')
-#   end
-# end
+describe('the word creation path', {:type=> :feature}) do
+  it('processes the user entry and displays word') do
+    visit('/')
+    fill_in('word', :with=> 'Apple')
+    click_button('Add Word!')
+    expect(page).to have_content('Apple')
+  end
+end
 
 # describe('the word creations path', {:type=> :feature}) do
 #   it('processes the user entries and displays words') do
