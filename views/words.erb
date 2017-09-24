@@ -8,14 +8,14 @@
     <input name="word" id="word" class="form-control"
     type="text">
   </div>
-  <h5><%= @blank_field_error %></h5>
+  <h5><%= @blank_word_error %></h5>
   <button type="submit" class="btn">Add Word!</button>
 </form>
 
 
 <h3>Words:</h3>
-<% @list.each do |item| %>
-  <h4><a href="/words/<%= item.id %>"><%= item.word %></a></h4>
+<% @list.each do |word| %>
+  <h4><a href="/words/<%= word.id %>"><%= word.word %></a></h4>
 <% end %>
 
 

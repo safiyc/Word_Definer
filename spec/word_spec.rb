@@ -2,7 +2,7 @@ require 'rspec'
 require 'word'
 require 'pry'
 
-describe("#Word") do
+describe("Word") do
   describe("#word") do
     it("checks for value of 'word' instance of class 'Word'") do
       word1 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
@@ -19,11 +19,12 @@ describe("#Word") do
 
   describe("#save") do
     it("saves words and definitions") do
+      @@words = []
       word1 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
       word1.save
       word2 = Word.new({:word=> "Tired", :word_definition=> "The result of spending a whole day figuring out coding errors"})
       word2.save
-      expect(Word.all()).to(eq([word1, word2]))
+      expect(@@words).to(eq([word1, word2]))
     end
   end
 
@@ -34,12 +35,23 @@ describe("#Word") do
       word2 = Word.new({:word=> "Tired", :word_definition=> "The result of spending a whole day figuring out coding errors"})
       word2.save
       Word.clear
-      expect(Word.all()).to(eq([]))
+      expect(@@words).to(eq([]))
+    end
+  end
+
+  describe("#all") do
+    it("checks for all saved words.") do
+      word1 = Word.new({:word=> "Apple", :word_definition=> "A fruit"})
+      word1.save
+      word2 = Word.new({:word=> "Banana", :word_definition=> "Another fruit"})
+      word2.save
+      expect(Word.all()).to(eq([word1, word2]))
     end
   end
 
   describe("#id") do
     it("increments the id by 1 of a word that is added") do
+      Word.clear
       word1 = Word.new({:word=> "Blue", :word_definition=> "A color"})
       word1.save
       word2 = Word.new({:word=> "Answer", :word_definition=> "The solution to a problem"})
@@ -62,6 +74,7 @@ describe("#Word") do
 
   describe("#more_definitions") do
     it("give multiple definitions to word") do
+      Word.clear
       word1 = Word.new({:word=> "Tired", :word_definition=> "The result of spending a whole day figuring out coding errors"})
       word1.word_definition = ["Lack of energy"]
       expect(word1.word_definition).to(eq(["Lack of energy"]))
