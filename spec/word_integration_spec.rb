@@ -33,16 +33,16 @@ describe('the blank field error path', {:type=> :feature}) do
   end
 end
 
-# describe('definition page path', {:type=> :feature}) do
-#   it('displays clicked word on new page.') do
-#     visit('/')
-#     fill_in('word', :with=> 'Word1')
-#     click_button('Add Word!')
-#     click_on('Word1')
-#     expect(page).to have_content("Word1")
-#   end
-# end
-#
+describe('definition page path', {:type=> :feature}) do
+  it('displays clicked word on new page.') do
+    visit('/')
+    fill_in('word', :with=> 'Word1')
+    click_button('Add Word!')
+    click_on('Word1')
+    expect(page).to have_content("Word1")
+  end
+end
+
 # describe('definition page path', {:type=> :feature}) do
 #   it('creates definitions.') do
 #     visit('/')
