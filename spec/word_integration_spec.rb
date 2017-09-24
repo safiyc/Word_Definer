@@ -39,29 +39,20 @@ describe('definition page path', {:type=> :feature}) do
     fill_in('word', :with=> 'Word1')
     click_button('Add Word!')
     click_on('Word1')
-    expect(page).to have_content("Word1")
+    expect(page).to have_content("Word: Word1")
   end
 end
 
-# describe('definition page path', {:type=> :feature}) do
-#   it('creates definitions.') do
-#     visit('/')
-#     fill_in('word', :with=> 'Word1')
-#     click_button('Add Word!')
-#     click_on('Word1')
-#     fill_in('definition', :with=> 'A definition of the word.')
-#     click_button('Add Definition!')
-#     fill_in('definition', :with=> 'A 2nd definition of the word.')
-#     click_button('Add Definition!')
-#     expect(page).to have_content('A 2nd definition of the word.')
-#   end
-# end
-#
-# describe('homepage path', {:type=> :feature}) do
-#   it('takes user back to homepage from definition page') do
-#     visit('/words/:id')
-#     click_link('Return Home!')
-#     visit('/')
-#     expect(page).to have_content("Welcome to Your Words!")
-#   end
-# end
+describe('definition page path', {:type=> :feature}) do
+  it('creates definitions.') do
+    visit('/')
+    fill_in('word', :with=> 'Word1')
+    click_button('Add Word!')
+    click_on('Word1', match: :first)
+    fill_in('definition', :with=> 'A definition of the word.')
+    click_button('Add Definition!')
+    fill_in('definition', :with=> 'A 2nd definition of the word.')
+    click_button('Add Definition!')
+    expect(page).to have_content('A definition of the word.')
+  end
+end

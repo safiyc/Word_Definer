@@ -30,19 +30,11 @@ end
 
 get('/words/:id') do
   @word = Word.find(params[:id])
-  @blank_definition_error = ""
   erb(:word)
 end
 
 post('/words/:id') do
-  definition = params["definition"]
-  @blank_definition_error = ""
-  if (definition == "")
-    @blank_definition_error = "Please enter a definition."
-  else
-    Word.new({:word=> word, :word_definition=> []}).save
-  end
   @word = Word.find(params[:id])
-  @word.word_definition = @word.word_defintion.push(definition)
+  @word.word_definition.push(params['definition'])
   erb(:word)
 end
