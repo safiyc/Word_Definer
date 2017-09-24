@@ -24,15 +24,15 @@ describe('the word creations path', {:type=> :feature}) do
   end
 end
 
-# describe('the blank field error path', {:type=> :feature}) do
-#   it('displays error message when clicking "Add Word!" with an empty input field.') do
-#     visit('/')
-#     fill_in('word', :with=> '')
-#     click_button('Add Word!')
-#     expect(page).to have_content("Please enter a word.")
-#   end
-# end
-#
+describe('the blank field error path', {:type=> :feature}) do
+  it('displays error message when clicking "Add Word!" with an empty input field.') do
+    visit('/')
+    fill_in('word', :with=> '')
+    click_button('Add Word!')
+    expect(page).to have_content("Please enter a word.")
+  end
+end
+
 # describe('definition page path', {:type=> :feature}) do
 #   it('displays clicked word on new page.') do
 #     visit('/')
