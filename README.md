@@ -1,6 +1,6 @@
 # Your Words
 
-#### Technology used: Ruby, Sinatra, Capybara, Heroku, HTML.
+#### Technologies used: Ruby, Sinatra, Capybara, Heroku, HTML.
 
 ##### By Safiy Cham
 
@@ -24,12 +24,13 @@ This program lets user inputs words and definitions for each word.
 
 ## Setup
 
-* Clone Github Repository
-* Run app via 2 methods: terminal with command "ruby app.rb", or access the Heroku page "#####".
+* Run app via 2 methods:
+ * Method 1: clone github content from below link, and run terminal command "ruby app.rb" in project directory
+ * Method 2: Click on "https://worddefiner.herokuapp.com/" to access the app on Heroku
 
 ## Link
 
-Click here (https://github.com/safiyc/word_definer_ProjectSinatra) to access the Github page for this project.
+Click here (https://github.com/safiyc/Word_Definer.git) to access the Github page for this project.
 
 ## License
 
