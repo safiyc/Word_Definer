@@ -26,7 +26,7 @@ This program lets user inputs words and definitions for each word.
 
 * Run app via 2 methods:
  * Method 1: clone github content from below link, and run terminal command "ruby app.rb" in project directory
- * Method 2: Click on "https://worddefiner.herokuapp.com/" to access the app on Heroku
+ * Method 2: Click on "https://word-definer.herokuapp.com/" to access the app on Heroku
 
 ## Link
 
